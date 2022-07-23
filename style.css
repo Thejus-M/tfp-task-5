@@ -45,15 +45,25 @@ img{
     padding: 30px;
 }
 
-
+.display{
+    text-align: center;
+    align-items: center;
+    padding-top: 20px;
+    height : 50px;
+    border: #04AA6D solid 1px;
+    border-radius: 3px;
+    background : rgb(201, 250, 23);
+    align-items: center;
+    align-content: center;
+}
 
 
 .screen{
     text-align: center;
     align-items: center;
-    padding-top: 50px;
-    height : 100px;
-    border-radius: 8px;
+    padding-top: 20px;
+    height : 50px;
+    border-radius: 3px;
     background : rgb(201, 250, 23);
     align-items: center;
     align-content: center;

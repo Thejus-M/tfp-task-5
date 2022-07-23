@@ -1,5 +1,11 @@
+// import { sqrt } from 'mathjs'
 const cal = document.getElementById('cal')
 
+
+const display = document.createElement("div");
+display.setAttribute('class', 'display')
+cal.appendChild(display)
+display.innerHTML = "0";
 
 const screen = document.createElement("div");
 screen.setAttribute('class', 'screen')
@@ -7,6 +13,8 @@ cal.appendChild(screen)
 screen.innerHTML = "0";
 
 var val=0;
+var first_num=0;
+var op='none';
 
 
 
@@ -39,10 +47,11 @@ for (var i = 1; i < 17; i++) {
         document.getElementById(i).onclick = () => clr(this)
 
     if(i==15)
-        document.getElementById(i).onclick = () =>  screen.innerHTML='0'
+        document.getElementById(i).onclick = () =>  ac(this)
 
     if(i==16)
-        document.getElementById(i).onclick = () =>  screen.innerHTML= math.eval(screen.innerHTML)
+        document.getElementById(i).onclick = () =>  equal_to(this)
+        // document.getElementById(i).onclick = () =>  screen.innerHTML= math.eval(screen.innerHTML)
 
     
     
@@ -70,6 +79,7 @@ function number_Button(d){
         screen.innerHTML = d.innerHTML;
     else
         screen.innerHTML += d.innerHTML;
+    console.log(val);
 }
 
 function clr(d){
@@ -81,7 +91,130 @@ function clr(d){
         screen.innerHTML = a.slice(0,-1);
 }
 
-function sum(d){
-    if(screen.innerHTML!=0)
-        screen.innerHTML += '+';
+function ac(d){
+    screen.innerHTML='0'
+    display.innerHTML='0'
+    op='none'
+    val=0
 }
+
+function sum(d){
+    a=screen.innerHTML
+    if(op == 'none'){
+        op='+'
+        val=Number(a)
+    }else{
+        switch(op){
+            case '+':val=Number(val)+Number(a)
+                break
+            case '-':val=Number(val)-Number(a)
+                break
+            case '*':val=Number(val)*Number(a)
+                break
+            case '/':val=Number(val)/Number(a)
+                break
+            default:
+            
+        }
+        op='+'
+    }
+    screen.innerHTML=''
+    display.innerHTML=val
+}
+
+function sub(d){
+    a=screen.innerHTML
+    if(op == 'none'){
+        op='-'
+        val=Number(a)
+    }else{
+        switch(op){
+            case '+':val=Number(val)+Number(a)
+                break
+            case '-':val=Number(val)-Number(a)
+                break
+            case '*':val=Number(val)*Number(a)
+                break
+            case '/':val=Number(val)/Number(a)
+                break
+            default:
+            
+        }
+        op='-'
+    }
+    screen.innerHTML=''
+    display.innerHTML=val
+}
+
+function mul(d){
+    a=screen.innerHTML
+    if(op == 'none'){
+        op='*'
+        val=Number(a)
+    }else{
+        switch(op){
+            case '+':val=Number(val)+Number(a)
+                break
+            case '-':val=Number(val)-Number(a)
+                break
+            case '*':val=Number(val)*Number(a)
+                break
+            case '/':val=Number(val)/Number(a)
+                break
+            default:
+            
+        }
+        op='*'
+    }
+    screen.innerHTML=''
+    display.innerHTML=val
+}
+
+function div(d){
+    a=screen.innerHTML
+    if(op == 'none'){
+        op='/'
+        val=Number(a)
+    }else{
+        switch(op){
+            case '+':val=Number(val)+Number(a)
+            break
+            case '-':val=Number(val)-Number(a)
+            break
+            case '*':val=Number(val)*Number(a)
+            break
+            case '/':val=Number(val)/Number(a)
+            break
+            default:
+                
+        }
+        op='/'
+    }
+    screen.innerHTML=''
+    display.innerHTML=val
+}
+
+function equal_to(d){
+    a=screen.innerHTML
+    if(op == 'none'){
+        op='none'
+        val=Number(a)
+    }else{
+        switch(op){
+            case '+':val=Number(val)+Number(a)
+            break
+            case '-':val=Number(val)-Number(a)
+            break
+            case '*':val=Number(val)*Number(a)
+            break
+            case '/':val=Number(val)/Number(a)
+            break
+            default:
+                
+        }
+        op='none'
+    }
+    screen.innerHTML=''
+    display.innerHTML=val
+}
+
