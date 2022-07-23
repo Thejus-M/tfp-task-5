@@ -1,0 +1,68 @@
+
+
+
+
+
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+li a.active {
+    color: white;
+    background-color: #04AA6D;
+}
+
+img{
+    width: 100px;
+}
+
+.cal{
+    width: 450px;
+    padding: 30px;
+}
+
+
+
+
+.screen{
+    text-align: center;
+    align-items: center;
+    padding-top: 50px;
+    height : 100px;
+    border-radius: 8px;
+    background : rgb(201, 250, 23);
+    align-items: center;
+    align-content: center;
+}
+
+.btn{
+    width: 90px;
+    height: 90px;
+    margin: 11px;
+    border-radius: 9px;
+    background-color: rgb(201, 250, 23);
+}
