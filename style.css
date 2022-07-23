@@ -3,7 +3,10 @@
 
 
 
-
+body{
+    align-items: center;
+    align-content: center;
+}
 
 
 ul {
@@ -64,6 +67,7 @@ img{
     padding-top: 20px;
     height : 50px;
     border-radius: 3px;
+    border: #04AA6D solid 1px;
     background : rgb(201, 250, 23);
     align-items: center;
     align-content: center;
